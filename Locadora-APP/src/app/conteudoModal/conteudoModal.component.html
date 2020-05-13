@@ -1,0 +1,25 @@
+<div class="modal-content cor-preta">
+  <div class="modal-header">
+    <h4 id="dialog-sizes-name1" class="modal-title pull-left">{{ objStreaming.titulo }}</h4>
+    <button type="button" class="close pull-right" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button> 
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-md-9">
+        <p>Sinopse: {{ objStreaming.sinopse }}</p>
+        <p>Gênero: <span *ngFor="let genero of objStreaming.genero">{{ genero.descricao + '/ ' }}</span></p>
+        <p>Elenco: <span *ngFor="let ator of objStreaming.ator">{{ ator.nome + '/ ' }}</span></p>
+        <p>Data Lançamento: {{ objStreaming.dataLancamento }}</p>
+      </div>
+      <div class="col-md-3">
+          <img src="http://localhost:5000/img/{{ objStreaming.imagemURL }}" >
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+    <button type="button" class="btn btn-primary" (click)="AlugarStreaming(objCliente, objStreaming)">Alugar</button>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<section class="main-container" >
+  <div class="location" id="home">
+      <h1 id="home">Lançamentos</h1>
+      <div class="box">
+        <a *ngFor="let item of Streamings">
+          <img src="http://localhost:5000/img/{{ item.imagemURL }}" (click)="detalheStreaming(item, Cliente)">
+        </a>
+      </div>
+  </div>
+</section>
